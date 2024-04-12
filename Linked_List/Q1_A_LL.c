@@ -41,11 +41,11 @@ int main()
 	LinkedList ll;
 	int c, i, j;
 	c = 1;
-
+	
 	//Initialize the linked list 1 as an empty linked list
-	ll.head = NULL;
+	ll.head = malloc(sizeof(ListNode));
+	ll.head->next = NULL;
 	ll.size = 0;
-
 	printf("1: Insert an integer to the sorted linked list:\n");
 	printf("2: Print the index of the most recent input value:\n");
 	printf("3: Print sorted linked list:\n");
@@ -95,39 +95,24 @@ int insertSortedLL(LinkedList *ll, int item)
 	int cnt = 0;
 	if (ll == NULL)
 		return -1;
-	cur = ll->head;
-
-	if (cur == NULL){
-		ll->head = malloc(sizeof(ListNode));
-		ll->head->item = item;
-		ll->head->next = NULL;
-		ll->size++;
-		return 1;
-	}
+	cur = ll->head->next;
+	pre = ll->head;
 	
 	while (cur != NULL)
 	{
+		cnt ++;
 		if (cur->item == item)
 			return -1;
 
 		if (cur->item > item){
-			if (cur == ll->head){
-				pre = malloc(sizeof(ListNode));
-				pre->item = item;
-				pre->next = cur;
-				ll->head = pre;
-				ll->size++;
-				return 1;
-			}
-
 			ListNode *newNode = malloc(sizeof(ListNode));
 			newNode->item = item;
 			newNode->next = cur;
 			pre->next = newNode;
 			ll->size++;
+
 			return cnt;
 		}
-
 		pre = cur;
 		cur = cur->next;
 		cnt++;
@@ -135,7 +120,8 @@ int insertSortedLL(LinkedList *ll, int item)
 	
 	pre->next = malloc(sizeof(ListNode));
 	pre->next->item = item;
-	return -1;
+	ll->size++;
+	return ll->size;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -145,7 +131,7 @@ void printList(LinkedList *ll){
 	ListNode *cur;
 	if (ll == NULL)
 		return;
-	cur = ll->head;
+	cur = ll->head->next;
 
 	if (cur == NULL)
 		printf("Empty");
