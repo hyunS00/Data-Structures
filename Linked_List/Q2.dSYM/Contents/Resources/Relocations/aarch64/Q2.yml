@@ -1,0 +1,13 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     Q2
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003454, symSize: 0x204 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003454, symSize: 0x204 }
+  - { offsetInCU: 0xA1, offset: 0xA1, size: 0x8, addend: 0x0, symName: _insertNode, symObjAddr: 0x214, symBinAddr: 0x100003668, symSize: 0x184 }
+  - { offsetInCU: 0x101, offset: 0x101, size: 0x8, addend: 0x0, symName: _printList, symObjAddr: 0x398, symBinAddr: 0x1000037EC, symSize: 0xBC }
+  - { offsetInCU: 0x133, offset: 0x133, size: 0x8, addend: 0x0, symName: _alternateMergeLinkedList, symObjAddr: 0x454, symBinAddr: 0x1000038A8, symSize: 0x1F4 }
+  - { offsetInCU: 0x19D, offset: 0x19D, size: 0x8, addend: 0x0, symName: _removeAllItems, symObjAddr: 0x648, symBinAddr: 0x100003A9C, symSize: 0x70 }
+  - { offsetInCU: 0x1DD, offset: 0x1DD, size: 0x8, addend: 0x0, symName: _findNode, symObjAddr: 0x6B8, symBinAddr: 0x100003B0C, symSize: 0xFC }
+  - { offsetInCU: 0x221, offset: 0x221, size: 0x8, addend: 0x0, symName: _removeNode, symObjAddr: 0x7B4, symBinAddr: 0x100003C08, symSize: 0x15C }
+...
