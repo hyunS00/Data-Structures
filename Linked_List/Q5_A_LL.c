@@ -103,6 +103,63 @@ int main()
 void frontBackSplitLinkedList(LinkedList *ll, LinkedList *resultFrontList, LinkedList *resultBackList)
 {
 	/* add your code here */
+	if (ll == NULL)
+		return;
+	if (resultBackList == NULL || resultFrontList == NULL)
+		return;
+
+	ListNode *dummy1 = malloc(sizeof(ListNode));
+	ListNode *dummy2 = malloc(sizeof(ListNode));
+	ListNode *dummy3 = malloc(sizeof(ListNode));
+	ListNode *cur, *tailFront, *tailBack;
+
+	dummy1->next = ll->head;
+	dummy2->next = resultFrontList->head;
+	dummy3->next = resultBackList->head;
+	ll->head = dummy1;
+	resultFrontList->head = dummy2;
+	resultBackList->head = dummy3;
+
+	cur = resultFrontList->head;
+	while (cur != NULL)
+	{
+		tailFront = cur;
+		cur = cur->next;
+	}
+	cur = resultBackList->head;
+	while (cur != NULL)
+	{
+		tailBack = cur;
+		cur = cur->next;
+	}
+	
+	cur = ll->head->next;
+	int index = 0;
+	while (cur != NULL)
+	{
+		printf("index: %d ll->size/2: %d\n",index, (ll->size/2));
+		if (index <= (ll->size-1) / 2 ){
+			tailFront->next = cur;
+			tailFront = tailFront->next;
+			cur = cur->next;
+			tailFront->next = NULL;
+		}
+		else{
+			tailBack->next = cur;
+			tailBack = tailBack->next;
+			cur = cur->next;
+			tailBack->next = NULL;
+		}
+		index++;
+	}
+
+	ll->head = NULL;
+	resultFrontList->head = resultFrontList->head->next;
+	resultBackList->head = resultBackList->head->next;
+
+	// free(dummy1);
+	// free(dummy2);
+	// free(dummy3);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////

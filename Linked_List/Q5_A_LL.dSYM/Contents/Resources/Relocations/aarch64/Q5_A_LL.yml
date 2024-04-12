@@ -1,0 +1,13 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/hyunsoo/jungle/pintos/Data-Structures/Linked_List/Q5_A_LL'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003460, symSize: 0x1D0 }
+  - { offsetInCU: 0x41, offset: 0x41, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003460, symSize: 0x1D0 }
+  - { offsetInCU: 0xA1, offset: 0xA1, size: 0x8, addend: 0x0, symName: _insertNode, symObjAddr: 0x1D0, symBinAddr: 0x100003630, symSize: 0x184 }
+  - { offsetInCU: 0x101, offset: 0x101, size: 0x8, addend: 0x0, symName: _printList, symObjAddr: 0x354, symBinAddr: 0x1000037B4, symSize: 0xBC }
+  - { offsetInCU: 0x133, offset: 0x133, size: 0x8, addend: 0x0, symName: _frontBackSplitLinkedList, symObjAddr: 0x410, symBinAddr: 0x100003870, symSize: 0x294 }
+  - { offsetInCU: 0x1D5, offset: 0x1D5, size: 0x8, addend: 0x0, symName: _removeAllItems, symObjAddr: 0x6A4, symBinAddr: 0x100003B04, symSize: 0x70 }
+  - { offsetInCU: 0x215, offset: 0x215, size: 0x8, addend: 0x0, symName: _findNode, symObjAddr: 0x714, symBinAddr: 0x100003B74, symSize: 0xFC }
+  - { offsetInCU: 0x259, offset: 0x259, size: 0x8, addend: 0x0, symName: _removeNode, symObjAddr: 0x810, symBinAddr: 0x100003C70, symSize: 0x15C }
+...
