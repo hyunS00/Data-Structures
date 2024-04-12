@@ -105,7 +105,7 @@ int insertSortedLL(LinkedList *ll, int item)
 			return -1;
 
 		if (cur->item > item){
-			ListNode *newNode = malloc(sizeof(ListNode));
+			ListNode *newNode = (ListNode*)malloc(sizeof(ListNode));
 			newNode->item = item;
 			newNode->next = cur;
 			pre->next = newNode;
