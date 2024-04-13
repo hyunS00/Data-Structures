@@ -157,9 +157,9 @@ void frontBackSplitLinkedList(LinkedList *ll, LinkedList *resultFrontList, Linke
 	resultFrontList->head = resultFrontList->head->next;
 	resultBackList->head = resultBackList->head->next;
 
-	// free(dummy1);
-	// free(dummy2);
-	// free(dummy3);
+	free(dummy1);
+	free(dummy2);
+	free(dummy3);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////
