@@ -76,7 +76,6 @@ int main()
 	{
 		printf("Please input your choice(1/2/0): ");
 		scanf("%d", &c);
-
 		switch (c)
 		{
 		case 1:
@@ -104,7 +103,46 @@ int main()
 ////////////////////////////////////////////////////////////
 int balanced(char *expression)
 {
-/* add your code here */
+	int i = 0;
+	char *cur = expression;
+	Stack s;
+	s.ll.head = NULL;
+	s.ll.size = 0;
+
+	if (*expression == '\0')
+		return 0;
+	
+	while (*cur != '\0')
+	{
+		char curValue = *cur;
+		if (curValue == '(' || curValue == '{' || curValue == '[')
+			push(&s,curValue);
+		else{
+			char popValue = pop(&s);
+			if((curValue == ')' && popValue != '(') || (curValue == '}' && popValue != '{') || (curValue == ']' && popValue != '[')){
+				removeAllItemsFromStack(&s);
+				for (int i = 0; i < 256; i++)
+				{
+					expression[i] = '\0';
+				}
+				return 1;
+			}
+		}
+
+		cur++;
+	}
+	for (int i = 0; i < 256; i++)
+	{
+		expression[i] = '\0';
+	}
+	if (!isEmptyStack(&s)){
+		removeAllItemsFromStack(&s);
+		return 1;
+	}
+
+	removeAllItemsFromStack(&s);
+	return 0;
+	
 }
 
 ////////////////////////////////////////////////////////////
