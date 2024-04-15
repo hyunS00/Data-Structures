@@ -93,10 +93,9 @@ int main()
 
 void levelOrderTraversal(BSTNode* root)
 {
-	QueueNode *head, *tail;
 	Queue q;
 	BSTNode *cur;
-	
+
 	q.head = NULL;
 	q.tail = NULL;
 
